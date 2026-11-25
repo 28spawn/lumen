@@ -7,7 +7,7 @@ import { get, put, recoveryTarget } from './storage.js';
 
 const $ = id => document.getElementById(id);
 let mode = 'install', busy = false, critical = false, imported = null, backupURL;
-const patchPromise = fetch('./lumen-1.2.json?v=16c').then(r => {
+const patchPromise = fetch('./lumen-1.2.json?v=16d').then(r => {
   if (!r.ok) throw new Error('Could not load Lumen patch manifest; reload and try again.');
   return r.json();
 });
@@ -127,6 +127,7 @@ async function upload(device) {
           await put('original', backup);
           linkBackup(current, version);
         }
+        if (state.kind === 'upgrade') status('Upgrading your earlier Lumen build', 'Your saved stock 1.2 backup (if any) is kept as the original.');
         target = await install(current, patch);
       }
     }

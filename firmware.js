@@ -40,6 +40,13 @@ async function normalizedPrefix(image, size, timestamp) {
   prefix.fill(0, timestamp.offset, timestamp.offset + timestamp.size);
   return sha256(prefix);
 }
+// An earlier Lumen build changes stock 1.2 only inside this manifest's patch ranges and the appended module.
+// Writing every patch's beforeHex back must therefore give exactly the stock FIT (same hash check as stock).
+function revertPatches(image, patch) {
+  const out = image.slice();
+  for (const entry of patch.patches) out.set(hex(entry.beforeHex), entry.offset);
+  return out;
+}
 export async function validateImage(value, patch) {
   extendedSchema(patch);
   const image = bytes(value);
@@ -47,10 +54,13 @@ export async function validateImage(value, patch) {
   for (const kind of ['stock', 'installed'])
     if (await normalizedPrefix(image, patch[kind + 'FitSize'], patch.timestamp) === patch[kind + 'NormalizedSha256'])
       return { kind, version: patch.firmwareVersion };
-  throw new Error('Unknown or unsupported firmware (Lumen v14 requires stock 1.2); nothing will be written.');
+  if (await normalizedPrefix(revertPatches(image, patch), patch.stockFitSize, patch.timestamp) === patch.stockNormalizedSha256)
+    return { kind: 'upgrade', version: patch.firmwareVersion };
+  throw new Error('Unknown or unsupported firmware (Lumen requires stock 1.2 or an earlier Lumen build); nothing will be written.');
 }
 export async function install(value, patch) {
-  const image = bytes(value), state = await validateImage(image, patch), output = image.slice();
+  const image = bytes(value), state = await validateImage(image, patch);
+  const output = state.kind === 'upgrade' ? revertPatches(image, patch) : image.slice();
   if (state.kind === 'installed') return output;
   for (const entry of [...patch.patches, patch.append]) output.set(hex(entry.afterHex), entry.offset);
   if ((await validateImage(output, patch)).kind !== 'installed') throw new Error('Patched firmware verification failed.');
@@ -60,8 +70,16 @@ export async function prepareRestore(current, backup, patch) {
   const original = bytes(backup), live = bytes(current);
   if ((await validateImage(original, patch)).kind !== 'stock') throw new Error('Restore requires a stock 1.2 firmware backup.');
   const state = await validateImage(live, patch);
-  const expected = state.kind === 'installed' ? await install(original, patch) : original.slice();
   const t = patch.timestamp;
+  if (state.kind === 'upgrade') {                 // an earlier Lumen build: its reverted FIT and the untouched tail must match
+    const reverted = revertPatches(live, patch);
+    reverted.set(original.subarray(t.offset, t.offset + t.size), t.offset);
+    if (!equal(reverted.subarray(0, patch.stockFitSize), original.subarray(0, patch.stockFitSize)) ||
+        !equal(live.subarray(patch.protectedOffset), original.subarray(patch.protectedOffset)))
+      throw new Error('Backup does not match this device’s current OS contents.');
+    return original.slice();
+  }
+  const expected = state.kind === 'installed' ? await install(original, patch) : original.slice();
   expected.set(live.subarray(t.offset, t.offset + t.size), t.offset);
   if (!equal(expected, live)) throw new Error('Backup does not match this device’s current OS contents.');
   return original.slice();
