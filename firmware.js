@@ -1,5 +1,5 @@
-// Exact-build firmware delta engine (adapted from jcuhnoio/re-nanocore, MIT License).
-// No USB access and no vendor firmware image.
+// Lumen OS firmware delta engine — Copyright (c) 2026 28spawn.
+// Adapted from jcuhnoio/re-nanocore (MIT License). No USB access and no vendor firmware image.
 function bytes(value) {
   if (value instanceof Uint8Array) return new Uint8Array(value.buffer, value.byteOffset, value.byteLength);
   if (value instanceof ArrayBuffer) return new Uint8Array(value);

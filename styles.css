@@ -1,3 +1,4 @@
+/* Lumen OS website — Copyright (c) 2026 28spawn (MIT License) */
 :root{--bg:#f4f1e8;--ink:#1b1d1c;--muted:#6b6a62;--card:#fffdf7;--line:#dcd7c7;--accent:#0e8f8f;--accent2:#e6b800;--danger:#b42318}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}

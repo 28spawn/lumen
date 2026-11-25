@@ -1,4 +1,5 @@
-// Browser installer for Lumen UI v14 (adapted from jcuhnoio/re-nanocore, MIT License).
+// Lumen OS browser installer — Copyright (c) 2026 28spawn.
+// Adapted from jcuhnoio/re-nanocore (MIT License).
 import { WebUSBTransport, RawOS, USB_FILTER } from './dfu.js';
 import { install, prepareRestore, sha256, validateImage } from './firmware.js';
 import { get, put, recoveryTarget } from './storage.js';
