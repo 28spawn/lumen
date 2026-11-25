@@ -21,7 +21,7 @@ h3{margin:0 0 6px;font-size:1.1rem}
 .hero-tags span{border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:999px;font-size:.82rem;font-weight:600}
 .device{position:relative;margin:0}
 .device img{display:block;width:100%;height:auto}
-.device-screen{position:absolute;left:18.16%;top:18.24%;width:47.46%;height:58.08%;object-fit:fill;image-rendering:pixelated}
+.device .device-screen{position:absolute;left:18.16%;top:18.24%;width:47.46%;height:58.08%;object-fit:fill;image-rendering:pixelated}
 .video-section,.features,.safety,.status{padding:30px 0 70px}
 video{width:100%;border-radius:20px;border:1px solid var(--line);background:#000;box-shadow:0 24px 60px -30px rgba(0,0,0,.35)}
 .caption{color:var(--muted);font-size:.9rem;margin-top:12px}
@@ -39,3 +39,4 @@ video{width:100%;border-radius:20px;border:1px solid var(--line);background:#000
 .site-footer p{margin:0}
 .footer-credit{font-weight:600;color:var(--ink)}
 @media(max-width:860px){.hero{grid-template-columns:1fr}.grid,.info-grid{grid-template-columns:1fr}}
+
