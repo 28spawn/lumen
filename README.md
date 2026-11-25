@@ -29,5 +29,5 @@ Only the OS partition is written; the bootloader is never touched and the final 
 
 ## License & Credits
 
-- **Lumen OS, UI design, showcase media, and website:** Copyright (c) 2026 **28spawn** — MIT License (see [LICENSE.txt](LICENSE.txt)).
-- **WebUSB DFU & local backup modules** (`dfu.js`, `storage.js`, and adapted portions of `firmware.js` and `app.js`): adapted from [jcuhnoio/re-nanocore](https://github.com/jcuhnoio/re-nanocore) under the MIT License.
+- **Lumen OS, UI design, showcase media, and website:** Copyright (c) 2026 **28spawn** — licensed under **GNU GPL v3.0** (see [LICENSE](LICENSE)). Any redistribution or derivative work must preserve attribution and be released under GPL-3.0.
+- **WebUSB DFU & local backup modules** (`dfu.js`, `storage.js`, and adapted portions of `firmware.js` and `app.js`): adapted from [jcuhnoio/re-nanocore](https://github.com/jcuhnoio/re-nanocore) under the MIT License (see [LICENSE-MIT-WEBUSB.txt](LICENSE-MIT-WEBUSB.txt)).

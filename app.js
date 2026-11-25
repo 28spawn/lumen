@@ -1,5 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-only
 // Lumen OS browser installer — Copyright (c) 2026 28spawn.
-// Adapted from jcuhnoio/re-nanocore (MIT License).
+// Adapted from jcuhnoio/re-nanocore (MIT License; see LICENSE-MIT-WEBUSB.txt).
 import { WebUSBTransport, RawOS, USB_FILTER } from './dfu.js';
 import { install, prepareRestore, sha256, validateImage } from './firmware.js';
 import { get, put, recoveryTarget } from './storage.js';
