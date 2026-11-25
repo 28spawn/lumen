@@ -19,6 +19,11 @@ h3{margin:0 0 6px;font-size:1.1rem}
 .hero-description{font-size:1.15rem;color:#3d3d37;max-width:34em}
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .hero-tags span{border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:999px;font-size:.82rem;font-weight:600}
+.hero-actions{margin-top:24px}
+.hero-actions .button{display:inline-block;text-decoration:none}
+.compat-banner{margin-top:24px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:18px;padding:22px 24px}
+.compat-banner p{margin:0;color:#4a4a43;font-size:.96rem}
+.compat-banner .eyebrow{margin-bottom:8px}
 .device{position:relative;margin:0}
 .device img{display:block;width:100%;height:auto}
 .device .device-screen{position:absolute;left:18.16%;top:18.24%;width:47.46%;height:58.08%;object-fit:fill}
