@@ -144,7 +144,7 @@ async function upload(device) {
     await put('pending', { ...pending, active: false, receipt });
     if ($('log')) $('log').textContent = JSON.stringify(receipt, null, 2);
     status(
-      mode === 'install' ? 'Lumen UI v14 is ready.' : mode === 'restore' ? 'Original firmware restored.' : 'Previous firmware recovered.',
+      mode === 'install' ? 'Lumen OS is ready.' : mode === 'restore' ? 'Original firmware restored.' : 'Previous firmware recovered.',
       'Every byte was verified. Wait for the pedal to restart before reconnecting audio at low volume.'
     );
     $('audioDisconnected').checked = false;
