@@ -7,7 +7,7 @@ import { get, put, recoveryTarget } from './storage.js';
 
 const $ = id => document.getElementById(id);
 let mode = 'install', busy = false, critical = false, imported = null, backupURL;
-const patchPromise = fetch('./lumen-1.2.json').then(r => {
+const patchPromise = fetch('./lumen-1.2.json?v=15').then(r => {
   if (!r.ok) throw new Error('Could not load Lumen patch manifest; reload and try again.');
   return r.json();
 });
