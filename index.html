@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#f4f1e8">
   <meta name="description" content="Lumen OS is custom firmware for the Livtra NanoCore guitar pedal: a new on-device interface, full ToneCommand &amp; MIDI compatibility, and browser WebUSB backup &amp; flasher.">
   <title>Lumen OS · Custom firmware for the NanoCore</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <header class="site-header wrap">
@@ -21,8 +21,8 @@
       <div class="hero-copy">
         <p class="eyebrow"><span class="tiny-dot"></span> CUSTOM FIRMWARE · WORK IN PROGRESS</p>
         <h1>A new face for<br>your NanoCore.</h1>
-        <p class="hero-description">Lumen OS replaces the pedal's on-screen interface with a faster, clearer one: a pedal-board home screen, a block editor, chain reordering, settings and a tuner, behind a new boot animation. Your sound engine, MIDI controls and ToneCommand stay fully compatible.</p>
-        <div class="hero-tags"><span>Lumen OS</span><span>Stock 1.2 engine</span><span>ToneCommand &amp; MIDI compatible</span></div>
+        <p class="hero-description">Lumen OS replaces the pedal's on-screen interface with a faster, clearer one: a pedal-board home screen, a block editor, chain reordering, quick actions, a save panel you can cancel, auto power-off, settings and a tuner, behind a new boot animation. Your sound engine, MIDI controls and ToneCommand stay fully compatible.</p>
+        <div class="hero-tags"><span>Lumen OS L16</span><span>Stock 1.2 engine</span><span>ToneCommand &amp; MIDI compatible</span></div>
         <div class="hero-actions"><a class="button button-primary" href="#install">Install Lumen OS ↓</a></div>
       </div>
       <figure class="device">
@@ -44,12 +44,29 @@
       <p class="eyebrow">WHAT'S NEW</p>
       <h2 id="features-title">Everything you touch, redrawn.</h2>
       <div class="grid">
-        <article class="card shot"><img src="assets/ui-boot.png" alt="Boot animation"><h3>Scope Aperture boot</h3><p>A short boot animation that hands straight over to the interface: no placeholder screen while the engine loads.</p></article>
+        <article class="card shot"><img src="assets/ui-boot.png" alt="Boot animation"><h3>Scope Aperture boot</h3><p>A short boot animation that hands straight over to the interface: no placeholder screen while the engine loads, audio muted during boot and faded in after.</p></article>
         <article class="card shot"><img src="assets/ui-home.png" alt="Home screen"><h3>Pedal-board home</h3><p>Eight blocks with their own icons, level meters, preset name, volume, battery and live CPU load at a glance.</p></article>
-        <article class="card shot"><img src="assets/ui-editor.png" alt="Block editor"><h3>Block editor</h3><p>Push a pedal to edit it. Block, type and ON/OFF up top, three big parameter tiles per page below.</p></article>
+        <article class="card shot"><img src="assets/ui-editor.png" alt="Block editor"><h3>Block editor</h3><p>Push a pedal to edit it. Block, type and ON/OFF up top, three big parameter tiles per page below, or six in the compact layout.</p></article>
         <article class="card shot"><img src="assets/ui-presets.png" alt="Preset browsing"><h3>Live preset browsing</h3><p>Turn the selector and presets load as you go, looping from 64 back to 1. Icons follow each preset's blocks.</p></article>
         <article class="card shot"><img src="assets/ui-chain.png" alt="Chain order"><h3>Chain reordering</h3><p>Choose CHAIN, grab a block, turn to move it, push to drop it. Swap a delay and a chorus in seconds.</p></article>
-        <article class="card shot"><img src="assets/ui-settings.png" alt="Settings"><h3>Settings &amp; tuner</h3><p>Synth mode, USB loopback, input gain, USB and Bluetooth volume, MIDI channel, plus a built-in tuner.</p></article>
+        <article class="card shot"><img src="assets/ui-settings-l16.png" alt="Settings"><h3>Settings &amp; tuner</h3><p>Synth mode, USB loopback, input gain, USB and Bluetooth volume, MIDI channel, plus Lumen's own AUTO OFF and EDITOR LAYOUT, the firmware version (1.2 (L16)) and a built-in tuner.</p></article>
+        <article class="card shot"><img src="assets/ui-quick.png" alt="Quick action popup: DRIVE OFF"><h3>Hold for quick actions</h3><p>Hold the SELECTOR knob on a pedal to switch it on or off without opening the editor. Works inside the editor too, and toggles Bluetooth on the BT item.</p></article>
+        <article class="card shot"><img src="assets/ui-save.png" alt="Save panel"><h3>Save, or change your mind</h3><p>Hold MASTER to save. Pick any slot with the SELECTOR, push to save; overwriting another preset asks first. Press or hold MASTER to cancel at any step.</p></article>
+        <article class="card shot"><img src="assets/ui-auto-off.png" alt="Auto power-off warning"><h3>Auto power-off</h3><p>Off, or 5 to 60 minutes without knobs or signal (guitar input, output, USB audio). A 30-second warning comes first; touch any knob to stay on.</p></article>
+        <article class="card shot"><img src="assets/ui-editor-compact.png" alt="Compact editor layout"><h3>Compact editor</h3><p>Prefer to see more at once? Switch EDITOR LAYOUT to COMPACT for six parameters per page. Both settings are remembered across power cycles.</p></article>
+      </div>
+      <div class="controls card">
+        <p class="eyebrow">CONTROLS</p>
+        <h3>Two knobs, every function.</h3>
+        <table>
+          <tr><th>SELECTOR turn</th><td>Move the cursor; in a list or editor, change the value being edited. Lists loop end to start.</td></tr>
+          <tr><th>SELECTOR push</th><td>Enter, edit or confirm. On/off options flip with a single push.</td></tr>
+          <tr><th>SELECTOR hold</th><td>Quick action: switch the focused pedal (or the open block) on/off; toggle Bluetooth on BT.</td></tr>
+          <tr><th>MASTER turn</th><td>Global volume, with a pop-up read-out.</td></tr>
+          <tr><th>MASTER push</th><td>Back; in the save panel, cancel.</td></tr>
+          <tr><th>MASTER hold</th><td>Open the save panel; inside it, cancel.</td></tr>
+          <tr><th>POWER hold</th><td>Switch off; a gauge fills while you hold.</td></tr>
+        </table>
       </div>
       <div class="compat-banner">
         <div>
@@ -117,6 +134,6 @@
     <nav aria-label="Footer"><a href="https://github.com/28spawn/lumen">Source ↗</a> · <a href="LICENSE">GPL-3.0 license</a> · <a href="LICENSE-MIT-WEBUSB.txt">WebUSB MIT notice</a></nav>
     <small>Independent interoperability project. Not affiliated with Livtra or NanoCore. No vendor firmware, amp models or presets are distributed.</small>
   </footer>
-  <script type="module" src="app.js?v=5"></script>
+  <script type="module" src="app.js?v=6"></script>
 </body>
 </html>

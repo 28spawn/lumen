@@ -8,12 +8,15 @@ Custom firmware UI and browser WebUSB flasher for the **Livtra NanoCore** guitar
 
 ## Features
 
-- **Scope Aperture boot animation** — hands straight over to the live UI with no placeholder screen.
+- **Scope Aperture boot animation** — hands straight over to the live UI with no placeholder screen; audio muted during boot, then faded in.
 - **Pedal-board home screen** — 8 effect blocks with custom icons, input/output meters, preset name, volume, battery, and live CPU load.
-- **Block editor** — block/type/ON-OFF header with three parameter tiles per page.
+- **Block editor** — block/type/ON-OFF header with three parameter tiles per page, or six in the COMPACT layout.
 - **Live preset browsing** — presets load as you turn the selector, looping 64 ↔ 1, with icons following each preset's blocks.
 - **Chain reordering** — grab and swap effect blocks directly on the pedal.
-- **Settings & built-in tuner** — Synth Mode, USB Loopback, Input Gain, USB/BT Volume, MIDI Channel (`OMNI`), and tuner.
+- **Quick actions** — hold the SELECTOR on a pedal (or in the editor) to switch it on/off; on BT to toggle Bluetooth.
+- **Save panel with cancel** — hold MASTER, pick a slot, push to save (overwriting asks first); MASTER push or hold cancels.
+- **Auto power-off** — OFF or 5/10/20/30/60 min without knobs or signal (input, output, USB audio), with a 30 s warning.
+- **Settings & built-in tuner** — Synth Mode, USB Loopback, Input Gain, USB/BT Volume, MIDI Channel (`OMNI`), Auto Off, Editor Layout, firmware version `1.2 (L16)`, and tuner.
 - **Full ToneCommand & MIDI compatibility** — runs on top of the stock 1.2 sound engine, so all USB-MIDI commands, preset renames, app sync, and ToneCommand workflows remain intact.
 
 ## Flashing from the browser
