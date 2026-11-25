@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="Lumen is custom firmware for the Livtra NanoCore guitar pedal: a new on-device interface, a safe recovery path and preset tooling.">
+  <title>Lumen · Custom firmware for the NanoCore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">L</span> Lumen <span class="brand-light">/ NANOCORE FIRMWARE</span></a>
+    <a class="source-link" href="https://github.com/28spawn">GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-dot"></span> CUSTOM FIRMWARE · WORK IN PROGRESS</p>
+        <h1>A new face for<br>your NanoCore.</h1>
+        <p class="hero-description">Lumen replaces the pedal's on-screen interface with a faster, clearer one: a pedal-board home screen, a block editor, chain reordering, settings and a tuner, behind a new boot animation. Your sound engine stays untouched.</p>
+        <div class="hero-tags"><span>UI v14</span><span>Stock 1.2 engine</span><span>Experimental</span></div>
+      </div>
+      <figure class="device">
+        <img src="assets/device.png" alt="NanoCore pedal">
+        <img class="device-screen" src="assets/ui-home.png" alt="Lumen home screen showing the pedal chain">
+      </figure>
+    </section>
+
+    <section class="video-section" aria-labelledby="video-title">
+      <p class="eyebrow">SEE IT RUN</p>
+      <h2 id="video-title">Boot to chain edit in under a minute.</h2>
+      <video controls preload="metadata" poster="assets/ui-boot.png" playsinline>
+        <source src="assets/lumen-v14-showcase.mp4" type="video/mp4">
+      </video>
+      <p class="caption">Rendered from the real Lumen UI code on a PC, with demo preset and parameter data. Not footage of a pedal.</p>
+    </section>
+
+    <section class="features" aria-labelledby="features-title">
+      <p class="eyebrow">WHAT'S NEW</p>
+      <h2 id="features-title">Everything you touch, redrawn.</h2>
+      <div class="grid">
+        <article class="card shot"><img src="assets/ui-boot.png" alt="Boot animation"><h3>Scope Aperture boot</h3><p>A short boot animation that hands straight over to the interface: no placeholder screen while the engine loads.</p></article>
+        <article class="card shot"><img src="assets/ui-home.png" alt="Home screen"><h3>Pedal-board home</h3><p>Eight blocks with their own icons, level meters, preset name, volume, battery and live CPU load at a glance.</p></article>
+        <article class="card shot"><img src="assets/ui-editor.png" alt="Block editor"><h3>Block editor</h3><p>Push a pedal to edit it. Block, type and ON/OFF up top, three big parameter tiles per page below.</p></article>
+        <article class="card shot"><img src="assets/ui-presets.png" alt="Preset browsing"><h3>Live preset browsing</h3><p>Turn the selector and presets load as you go, looping from 64 back to 1. Icons follow each preset's blocks.</p></article>
+        <article class="card shot"><img src="assets/ui-chain.png" alt="Chain order"><h3>Chain reordering</h3><p>Choose CHAIN, grab a block, turn to move it, push to drop it. Swap a delay and a chorus in seconds.</p></article>
+        <article class="card shot"><img src="assets/ui-settings.png" alt="Settings"><h3>Settings &amp; tuner</h3><p>Synth mode, USB loopback, input gain, USB and Bluetooth volume, MIDI channel, plus a built-in tuner.</p></article>
+      </div>
+    </section>
+
+    <section class="safety" aria-labelledby="safety-title">
+      <p class="eyebrow">SAFE BY DESIGN</p>
+      <h2 id="safety-title">You can always get back.</h2>
+      <div class="info-grid">
+        <article><span class="info-number">01 / BACKUP</span><h3>Back up first</h3><p>Flashing writes your pedal's flash storage. Always keep a backup of your original firmware before you try anything.</p></article>
+        <article><span class="info-number">02 / BOOTLOADER</span><h3>Bootloader is never touched</h3><p>Only the OS partition is written. The bootloader stays intact, so the pedal's USB update mode is always available.</p></article>
+        <article><span class="info-number">03 / RESCUE</span><h3>Three-boot rescue</h3><p>Power-cycle the pedal three times within 20 seconds and it drops into update mode by itself, so a bad build never locks you out.</p></article>
+      </div>
+    </section>
+
+    <section class="status" aria-labelledby="status-title">
+      <p class="eyebrow">HONEST STATUS</p>
+      <h2 id="status-title">Where Lumen stands today.</h2>
+      <ul class="status-list">
+        <li><strong>Tested in software:</strong> the interface passes its automated checks, including the boot animation, layout and controller logic.</li>
+        <li><strong>Tested on a pedal:</strong> earlier UI versions have run on the author's own NanoCore. The newest builds are still being bench-tested.</li>
+        <li><strong>No web installer yet:</strong> flashing is a developer workflow for now. Do not flash firmware you can't recover.</li>
+        <li><strong>Preset tool:</strong> a separate tool builds presets for the stock firmware over USB-MIDI.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p>Made by <a class="footer-credit" href="https://github.com/28spawn">28spawn ↗</a>. Built for your pedal.</p>
+    <small>Independent interoperability project. Not affiliated with Livtra or NanoCore. No vendor firmware, amp models or presets are distributed.</small>
+  </footer>
+</body>
+</html>
