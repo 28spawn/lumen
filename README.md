@@ -23,9 +23,11 @@ Custom firmware UI and browser WebUSB flasher for the **Livtra NanoCore** guitar
 3. Click **Install Lumen OS**, allow the MIDI SysEx and USB prompts, and wait for backup, flash, and byte-for-byte verification to finish.
 4. Click **Download backup** to keep a copy of your original stock 1.2 OS partition.
 
-### Recovery
+### Recovery & Disclaimer
 
 Only the OS partition is written; the bootloader is never touched and the final partial erase sector is protected. You can restore stock 1.2 anytime from the browser, or power-cycle the pedal **3× within 20 seconds** to enter update mode.
+
+**Use at your own risk:** Lumen OS is unofficial, experimental firmware provided as-is with no warranty. Flashing writes to your pedal's flash storage, carries the usual risks of interrupted writes or unexpected behavior, and may void the manufacturer's warranty. Always unplug audio outputs before entering update mode, download your original backup, and keep USB connected until verification finishes.
 
 ## License & Credits
 
